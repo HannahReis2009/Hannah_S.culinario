@@ -27,5 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // Pode ser um modal ou mensagem na página no futuro
             alert("✅ Receita cadastrada com sucesso!");
         }
+
+        // Hannah Reis – Animação suave no título ao carregar a página
+window.addEventListener('DOMContentLoaded', () => {
+    const titulo = document.querySelector('h1');
+    titulo.style.opacity = 0;
+    titulo.style.transform = 'translateY(-30px)';
+
+    setTimeout(() => {
+        titulo.style.transition = 'all 1s ease';
+        titulo.style.opacity = 1;
+        titulo.style.transform = 'translateY(0)';
+    }, 100);
+});
+
     });
 });

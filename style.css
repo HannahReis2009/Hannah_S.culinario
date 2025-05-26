@@ -22,12 +22,19 @@ form {
     border: 1px solid #d0d9e6;
 }
 
+/* Título centralizado mais bonito - Hannah Reis */
 h1 {
-    text-align: center; /* Centraliza o título */
-    color: #1565c0; /* azul forte */
-    margin-top: 30px;
-    font-size: 28px;
+    text-align: center;
+    color: #1565c0;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    background-color: #e3f2fd;
+    padding: 10px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
 }
+
 
 
 label {
@@ -92,3 +99,13 @@ button:hover {
 .link-receitas:hover {
     text-decoration: underline;
 }
+ /* Div geral centralizadora - Hannah Reis */
+.container-geral {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

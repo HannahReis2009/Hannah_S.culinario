@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-    <link rel="stylesheet" href="style.css">
-
-
     <meta charset="UTF-8">
     <title>Sistema de Receitas - Hannah Reis</title>
-
-    
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>🍽️ Cadastro de Receita</h1>
+    <div class="container-geral"> <!-- NOVA DIV CENTRALIZADORA -->
+        <h1>🍽️ Cadastro de Receita</h1>
 
-    <form action="processa_receita.php" method="POST">
-        <label for="nome">Nome da Receita:</label>
-        <input type="text" id="nome" name="nome" required>
-        <small>Ex: Bolo de Cenoura</small>
+        <form action="processa_receita.php" method="POST">
+            <label for="nome">Nome da Receita:</label>
+            <input type="text" id="nome" name="nome" required>
+            <small>Ex: Bolo de Cenoura</small>
 
-        <label for="ingredientes">Ingredientes:</label>
-        <textarea id="ingredientes" name="ingredientes" rows="4" required></textarea>
-        <small>Separe os ingredientes por vírgulas. Ex: farinha, açúcar, ovos</small>
+            <label for="ingredientes">Ingredientes:</label>
+            <textarea id="ingredientes" name="ingredientes" rows="4" required></textarea>
+            <small>Separe os ingredientes por vírgulas. Ex: farinha, açúcar, ovos</small>
 
-        <label for="tempo">Tempo de Preparo (minutos):</label>
-        <input type="number" id="tempo" name="tempo" min="1" required>
-        <small>Somente números. Ex: 45</small>
+            <label for="tempo">Tempo de Preparo (minutos):</label>
+            <input type="number" id="tempo" name="tempo" min="1" required>
+            <small>Somente números. Ex: 45</small>
 
-        <button type="submit">Cadastrar Receita</button>
-    </form>
+            <button type="submit">Cadastrar Receita</button>
+        </form>
 
-    <a href="listar_receitas.php" class="link-receitas">📋 Ver todas as receitas cadastradas</a>
+        <a href="listar_receitas.php" class="link-receitas">📋 Ver todas as receitas cadastradas</a>
+    </div>
 
     <script src="script.js"></script>
 
-
 </body>
-</html>
+</html>                                         
