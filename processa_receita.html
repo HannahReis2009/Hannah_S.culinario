@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Processando Receita...</title>
+    <script>
+        // Captura os dados do formulário do sessionStorage (dados enviados via form são perdidos, então usamos sessionStorage antes de enviar)
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const nome = sessionStorage.getItem("nome");
+            const ingredientes = sessionStorage.getItem("ingredientes");
+            const tempo = sessionStorage.getItem("tempo");
+
+            if (!nome || !ingredientes || !tempo) {
+                alert("Erro ao processar os dados.");
+                window.location.href = "index.html";
+                return;
+            }
+
+            // Recupera ou cria array de receitas
+            const receitas = JSON.parse(localStorage.getItem('receitas') || '[]');
+
+            // Adiciona nova receita
+            receitas.push({ nome, ingredientes, tempo });
+
+            // Salva novamente no LocalStorage
+            localStorage.setItem('receitas', JSON.stringify(receitas));
+
+            // Limpa o sessionStorage
+            sessionStorage.clear();
+
+            // Redireciona após 1 segundo
+            setTimeout(() => {
+                window.location.href = 'listar_receitas.html';
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center; font-family:sans-serif; margin-top:50px;">Salvando receita... 🍽️</h1>
+</body>
+</html>

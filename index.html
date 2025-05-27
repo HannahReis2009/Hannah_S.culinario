@@ -7,10 +7,10 @@
 </head>
 <body>
 
-    <div class="container-geral"> <!-- NOVA DIV CENTRALIZADORA -->
+    <div class="container-geral">
         <h1>🍽️ Cadastro de Receita</h1>
 
-        <form action="processa_receita.php" method="POST">
+        <form id="form-receita">
             <label for="nome">Nome da Receita:</label>
             <input type="text" id="nome" name="nome" required>
             <small>Ex: Bolo de Cenoura</small>
@@ -26,10 +26,10 @@
             <button type="submit">Cadastrar Receita</button>
         </form>
 
-        <a href="listar_receitas.php" class="link-receitas">📋 Ver todas as receitas cadastradas</a>
+        <a href="listar_receitas.html" class="link-receitas">📋 Ver todas as receitas cadastradas</a>
     </div>
 
     <script src="script.js"></script>
 
 </body>
-</html>                                         
+</html>

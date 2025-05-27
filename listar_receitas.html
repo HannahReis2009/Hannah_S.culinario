@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Receitas Cadastradas - Hannah Reis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #d0d9e6;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .card h2 {
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-geral">
+    <h1>📋 Receitas Cadastradas</h1>
+    <div id="lista-receitas"></div>
+    <a href="index.html" class="link-receitas">➕ Cadastrar nova receita</a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const lista = document.getElementById('lista-receitas');
+        const receitas = JSON.parse(localStorage.getItem('receitas') || '[]');
+
+        if (receitas.length === 0) {
+            lista.innerHTML = "<p>❌ Nenhuma receita cadastrada ainda.</p>";
+            return;
+        }
+
+        receitas.forEach(r => {
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.innerHTML = `
+                <h2>${r.nome}</h2>
+                <p><strong>Ingredientes:</strong> ${r.ingredientes}</p>
+                <p><strong>Tempo de preparo:</strong> ${r.tempo} minutos</p>
+            `;
+            lista.appendChild(div);
+        });
+    });
+</script>
+
+</body>
+</html>
